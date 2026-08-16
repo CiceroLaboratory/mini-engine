@@ -1,0 +1,17 @@
+body{
+  background-color: darkslateblue;
+  overflow: hidden;
+}
+
+#app{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+#canvas{
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: deepskyblue;
+}
