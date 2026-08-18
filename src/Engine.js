@@ -1,6 +1,6 @@
-import World from "./core/World";
-import Player from "./entities/Player";
-import InputSystem from "./systems/InputSystem";
+import World from "./core/World.js";
+import Player from "./entities/Player.js";
+import InputSystem from "./systems/InputSystem.js";
 
 class Engine{
   constructor(canvas){
@@ -24,7 +24,9 @@ class Engine{
     this.world.update()
   }
   draw(){
-    this.context.clearRect(0,0, this.canvas.width, this.canvas.height)
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
+    this.context.fillStyle = 'deepskyblue'
+    this.context.fillRect(0,0, this.canvas.width, this.canvas.height)
     this.world.draw(this.context)
   }
 }

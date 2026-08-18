@@ -1,5 +1,4 @@
-import Entity from "./Entity";
-
+import Entity from "./Entity.js";
 class Player extends Entity {
   constructor(inputSystem) {
     super();
@@ -13,8 +12,8 @@ class Player extends Entity {
       y: 250,
     };
     this.movementSpeed = {
-      velocityX: 5,
-      velocityY: 0,
+      velocityX: 0,
+      velocityY: 0,  
     };
   }
   update() {
@@ -26,7 +25,17 @@ class Player extends Entity {
       this.movementSpeed.velocityX = 0;
     }
 
+    if(this.inputSystem.isPressed("ArrowUp")){
+      this.movementSpeed.velocityY = -15
+    } else if(this.inputSystem.isPressed("ArrowDown")){
+      this.movementSpeed.velocityY = 5
+    } else {
+      // this.movementSpeed.velocityY  += 1
+    }
+    
+
     this.position.x += this.movementSpeed.velocityX
+    this.position.y += this.movementSpeed.velocityY
   }
   draw(context) {
     context.fillStyle = "orange";
